@@ -7,9 +7,9 @@
 
 - 🔭 I’m currently working on **AIML Projects**
 
-- 📫 How to reach me **mayukh647@gmail.com**
+- 📫 How to reach me **mayukhbanerjee011@gmail.com**
 
-- 📄 Know about my experiences [https://drive.google.com/file/d/1-I-jPyAtc9kmcVnsrQu_zNBkoW5oq1gA/view?usp=sharing](https://drive.google.com/file/d/1-I-jPyAtc9kmcVnsrQu_zNBkoW5oq1gA/view?usp=sharing)
+- 📄 My Resume [https://drive.google.com/file/d/1-I-jPyAtc9kmcVnsrQu_zNBkoW5oq1gA/view?usp=sharing](https://drive.google.com/file/d/1-I-jPyAtc9kmcVnsrQu_zNBkoW5oq1gA/view?usp=sharing)
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
