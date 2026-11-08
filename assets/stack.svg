@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="386" viewBox="0 0 1000 386" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace">
+<style>
+text{font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace}
+
+.lit{fill-opacity:0;stroke-opacity:0;animation:lit 9s ease-out infinite}
+@keyframes lit{0%{fill-opacity:0;stroke-opacity:0}4%{fill-opacity:.16;stroke-opacity:1}12%{fill-opacity:.07;stroke-opacity:.6}62%{fill-opacity:.07;stroke-opacity:.6}70%,100%{fill-opacity:0;stroke-opacity:0}}
+.lab{animation:lab 9s ease-out infinite}
+@keyframes lab{0%{fill:#e6edf3}4%{fill:#00d4b4}62%{fill:#00d4b4}70%,100%{fill:#e6edf3}}
+
+</style>
+<defs>
+  <clipPath id="card"><rect x="0.5" y="0.5" width="999" height="385" rx="14"/></clipPath>
+  <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#30363d"/></pattern>
+  <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4"/></filter>
+</defs>
+<rect x="0.5" y="0.5" width="999" height="385" rx="14" fill="#0d1117" stroke="#30363d"/>
+<g clip-path="url(#card)">
+<rect width="1000" height="386" fill="url(#dots)" opacity="0.3"/>
+<text x="28" y="32" font-size="13" fill="#8b949e">// training data, read bottom up</text>
+<text x="972" y="32" font-size="12" fill="#484f58" text-anchor="end">abstraction ↑</text><line x1="44" y1="52" x2="44" y2="357" stroke="#30363d" stroke-width="2"/>
+<circle r="4" fill="#00d4b4"><animateMotion dur="5s" repeatCount="indefinite" path="M44 357 L44 52"/></circle><rect x="64" y="325" width="908" height="32" rx="7" fill="#161b22" stroke="#30363d"/>
+<rect x="64" y="325" width="908" height="32" rx="7" fill="#00d4b4" stroke="#00d4b4" class="lit" style="animation-delay:0.00s"/>
+<text x="80" y="346" font-size="11" fill="#484f58">01</text>
+<text x="110" y="346" font-size="14" font-weight="700" fill="#e6edf3" class="lab" style="animation-delay:0.00s">regression &amp; classification</text>
+<text x="956" y="346" font-size="12" fill="#8b949e" text-anchor="end">least squares · logistic · gradient descent · bias/variance</text><rect x="64" y="286" width="908" height="32" rx="7" fill="#161b22" stroke="#30363d"/>
+<rect x="64" y="286" width="908" height="32" rx="7" fill="#00d4b4" stroke="#00d4b4" class="lit" style="animation-delay:0.45s"/>
+<text x="80" y="307" font-size="11" fill="#484f58">02</text>
+<text x="110" y="307" font-size="14" font-weight="700" fill="#e6edf3" class="lab" style="animation-delay:0.45s">neural networks</text>
+<text x="956" y="307" font-size="12" fill="#8b949e" text-anchor="end">backprop · activations · regularisation · overfitting</text><rect x="64" y="247" width="908" height="32" rx="7" fill="#161b22" stroke="#30363d"/>
+<rect x="64" y="247" width="908" height="32" rx="7" fill="#00d4b4" stroke="#00d4b4" class="lit" style="animation-delay:0.90s"/>
+<text x="80" y="268" font-size="11" fill="#484f58">03</text>
+<text x="110" y="268" font-size="14" font-weight="700" fill="#e6edf3" class="lab" style="animation-delay:0.90s">transformers</text>
+<text x="956" y="268" font-size="12" fill="#8b949e" text-anchor="end">self-attention · positional encoding · encoder/decoder</text><rect x="64" y="208" width="908" height="32" rx="7" fill="#161b22" stroke="#30363d"/>
+<rect x="64" y="208" width="908" height="32" rx="7" fill="#00d4b4" stroke="#00d4b4" class="lit" style="animation-delay:1.35s"/>
+<text x="80" y="229" font-size="11" fill="#484f58">04</text>
+<text x="110" y="229" font-size="14" font-weight="700" fill="#e6edf3" class="lab" style="animation-delay:1.35s">embeddings &amp; vector search</text>
+<text x="956" y="229" font-size="12" fill="#8b949e" text-anchor="end">cosine · ann indexes · hybrid tf-idf + dense</text><rect x="64" y="169" width="908" height="32" rx="7" fill="#161b22" stroke="#30363d"/>
+<rect x="64" y="169" width="908" height="32" rx="7" fill="#00d4b4" stroke="#00d4b4" class="lit" style="animation-delay:1.80s"/>
+<text x="80" y="190" font-size="11" fill="#484f58">05</text>
+<text x="110" y="190" font-size="14" font-weight="700" fill="#e6edf3" class="lab" style="animation-delay:1.80s">next-token prediction</text>
+<text x="956" y="190" font-size="12" fill="#8b949e" text-anchor="end">n-grams · softmax · temperature · top-p</text><rect x="64" y="130" width="908" height="32" rx="7" fill="#161b22" stroke="#30363d"/>
+<rect x="64" y="130" width="908" height="32" rx="7" fill="#00d4b4" stroke="#00d4b4" class="lit" style="animation-delay:2.25s"/>
+<text x="80" y="151" font-size="11" fill="#484f58">06</text>
+<text x="110" y="151" font-size="14" font-weight="700" fill="#e6edf3" class="lab" style="animation-delay:2.25s">small language models</text>
+<text x="956" y="151" font-size="12" fill="#8b949e" text-anchor="end">size vs quality · local inference · fine-tuning</text><rect x="64" y="91" width="908" height="32" rx="7" fill="#161b22" stroke="#30363d"/>
+<rect x="64" y="91" width="908" height="32" rx="7" fill="#00d4b4" stroke="#00d4b4" class="lit" style="animation-delay:2.70s"/>
+<text x="80" y="112" font-size="11" fill="#484f58">07</text>
+<text x="110" y="112" font-size="14" font-weight="700" fill="#e6edf3" class="lab" style="animation-delay:2.70s">memory &amp; caching</text>
+<text x="956" y="112" font-size="12" fill="#8b949e" text-anchor="end">prompt caching · repeated-data cache · redis</text><rect x="64" y="52" width="908" height="32" rx="7" fill="#161b22" stroke="#30363d"/>
+<rect x="64" y="52" width="908" height="32" rx="7" fill="#00d4b4" stroke="#00d4b4" class="lit" style="animation-delay:3.15s"/>
+<text x="80" y="73" font-size="11" fill="#484f58">08</text>
+<text x="110" y="73" font-size="14" font-weight="700" fill="#e6edf3" class="lab" style="animation-delay:3.15s">system architecture</text>
+<text x="956" y="73" font-size="12" fill="#8b949e" text-anchor="end">batch jobs · retries · idempotency · queues</text>
+</g>
+</svg>
