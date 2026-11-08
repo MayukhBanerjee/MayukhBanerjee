@@ -82,16 +82,13 @@ function hero() {
   }));
 
   // left column
-  b += `<g class="up" style="animation-delay:.05s">
-<rect x="48" y="44" width="262" height="30" rx="15" fill="${C.teal}" fill-opacity="0.10" stroke="${C.teal}" stroke-opacity="0.45"/>
-<circle cx="68" cy="59" r="4" fill="${C.teal}"/><circle cx="68" cy="59" r="4" fill="none" stroke="${C.teal}" class="ring"/>
-<text x="82" y="64" class="sans" font-size="13.5" font-weight="600" fill="${C.teal}">Open to full-time AI/ML roles</text></g>
-<text x="46" y="140" class="sans up" style="animation-delay:.15s" font-size="62" font-weight="700" fill="url(#name)" letter-spacing="-1">Mayukh Banerjee</text>
-<text x="48" y="184" class="sans up" style="animation-delay:.3s" font-size="25" font-weight="600" fill="${C.teal}">AI/ML Engineer<tspan fill="${C.mute}" font-weight="400">  ·  </tspan><tspan fill="${C.text}" font-weight="500">LLM Systems, RAG and Agents</tspan></text>
-<text class="sans up" style="animation-delay:.45s" font-size="17" fill="${C.body}">
-<tspan x="48" y="230">I build retrieval and agent systems where the model handles</tspan>
-<tspan x="48" y="256">language, and tested code handles everything that must be right.</tspan></text>
-<text x="48" y="304" class="mono up" style="animation-delay:.6s" font-size="13" fill="${C.mute}">Bangalore, India  ·  B.Tech IT, VIT (2027)</text>
+  b += `<text x="46" y="122" class="sans up" style="animation-delay:.1s" font-size="64" font-weight="700" fill="url(#name)" letter-spacing="-1">Mayukh Banerjee</text>
+<text x="48" y="168" class="sans up" style="animation-delay:.25s" font-size="25" font-weight="600" fill="${C.teal}">AI/ML Engineer<tspan fill="${C.mute}" font-weight="400">  ·  </tspan><tspan fill="${C.text}" font-weight="500">LLM Systems, RAG and Agents</tspan></text>
+<text class="sans up" style="animation-delay:.4s" font-size="17" fill="${C.body}">
+<tspan x="48" y="214">I build retrieval and agent systems where the model handles</tspan>
+<tspan x="48" y="240">language, and tested code handles everything that must be right.</tspan></text>
+<g class="up" style="animation-delay:.55s"><circle cx="54" cy="283" r="4" fill="${C.teal}"/><circle cx="54" cy="283" r="4" fill="none" stroke="${C.teal}" class="ring"/>
+<text x="68" y="288" class="mono" font-size="13" fill="${C.mute}">Bangalore, India</text></g>
 <text x="${W - 40}" y="${H - 26}" class="mono" font-size="11" fill="#3b4752" text-anchor="end">input → hidden → hidden → output</text>`;
 
   const css = `
@@ -127,12 +124,12 @@ ${visual}
 }
 
 function cardScheduler() {
-  const names = ["Parse", "Frame", "Search", "Rank", "Verify", "Reply"];
+  const names = ["Intent", "Frame", "Expand", "Retrieve", "Rank", "Respond"];
   const cx = (i) => 75 + i * 90, y = 78, dur = 3.6;
   let v = `<defs><marker id="ah" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L8 4L0 8z" fill="${C.teal2}"/></marker></defs>`;
   for (let i = 0; i < 5; i++) v += `<line x1="${cx(i) + 20}" y1="${y}" x2="${cx(i + 1) - 20}" y2="${y}" stroke="${C.border}" stroke-width="2"/>`;
-  v += `<path d="M${cx(4)} ${y - 22} C${cx(4)} ${y - 62} ${cx(2)} ${y - 62} ${cx(2)} ${y - 25}" fill="none" stroke="${C.teal2}" stroke-dasharray="4 4" marker-end="url(#ah)" class="dash"/>
-<text x="${cx(3)}" y="${y - 62}" class="mono" font-size="11" fill="${C.mute}" text-anchor="middle">slot taken: search again</text>`;
+  v += `<path d="M${cx(1)} ${y - 22} C${cx(1)} ${y - 58} ${cx(0)} ${y - 58} ${cx(0)} ${y - 25}" fill="none" stroke="${C.teal2}" stroke-dasharray="4 4" marker-end="url(#ah)" class="dash"/>
+<text x="${cx(1) + 26}" y="${y - 40}" class="mono" font-size="11" fill="${C.mute}">field missing: ask the user, never guess</text>`;
   for (let k = 0; k < 2; k++)
     v += `<circle r="5" fill="${C.teal}"><animateMotion dur="${dur}s" begin="${-k * dur / 2}s" repeatCount="indefinite" path="M${cx(0)} ${y} L${cx(5)} ${y}"/></circle>`;
   names.forEach((n, i) => {
@@ -146,8 +143,8 @@ function cardScheduler() {
   v += `<text x="${CW - 24}" y="146" class="mono" font-size="11" fill="${C.mute}" text-anchor="end">LangGraph StateGraph · 2 of 6 nodes call a model</text>`;
   return card({
     kicker: "AGENTIC AI · BOOKING", title: "Scheduler AI",
-    lines: ["A booking agent where the LLM only reads the request and", "writes the reply. Plain code finds, ranks and verifies slots."],
-    chips: ["LangGraph", "FastAPI", "Next.js", "MongoDB"],
+    lines: ["A booking agent where the LLM only reads the request and", "writes the reply. Plain code searches, ranks and checks slots."],
+    chips: ["LangGraph", "Gemini", "FastAPI", "Next.js"],
     visual: v,
     css: `.halo{animation:halo ${dur}s ease-out infinite}@keyframes halo{0%{opacity:0}6%{opacity:.75}20%,100%{opacity:0}}
 .dash{animation:dash 1.2s linear infinite}@keyframes dash{to{stroke-dashoffset:-16}}`,
@@ -165,7 +162,7 @@ function cardEcoLoop() {
 <text x="${x}" y="${y + 13}" class="mono" font-size="10" fill="${hot ? C.bg : C.mute}" text-anchor="middle">${sub}</text>`;
   v += box(cx - rx, cy, 130, "Building", "EnergyPlus", false);
   v += box(cx, cy - ry, 130, "LLM agent", "5 MCP tools", true);
-  v += box(cx + rx, cy, 130, "Safety clamp", "7 invariants", false);
+  v += box(cx + rx, cy, 130, "Safety clamp", "hard invariants", false);
   v += box(cx, cy + ry, 140, "HVAC + lights", "setpoints", false);
   const pts = Array.from({ length: 30 }, (_, i) => `${cx - 70 + i * 4.8} ${cy - 8 + Math.sin(i / 3) * 6 + Math.sin(i / 1.3) * 2}`).join(" L");
   v += `<path d="M${pts}" fill="none" stroke="${C.teal2}" stroke-width="1.6" pathLength="1" stroke-dasharray="1 1">
@@ -198,7 +195,7 @@ function cardEvoke() {
   return card({
     kicker: "RESEARCH · PUBLISHED PAPER", title: "Evoke",
     lines: ["Models how one person speaks, with a gate that stops it", "from inventing opinions they never held."],
-    chips: ["AWS Bedrock", "LangChain", "Serverless", "ElevenLabs"],
+    chips: ["AWS Bedrock", "Lambda", "Comprehend", "ElevenLabs"],
     visual: v,
     css: `.bar{transform-box:fill-box;transform-origin:center;animation:wave 1.2s ease-in-out infinite alternate}
 @keyframes wave{0%{transform:scaleY(.25)}100%{transform:scaleY(1)}}`,
@@ -228,7 +225,7 @@ function cardLeBy() {
   [[130, 0.5], [150, 0.55], [100, 0.6]].forEach(([w, t], i) => {
     v += `<rect x="418" y="${46 + i * 14}" width="${w}" height="6" rx="3" fill="#56636e" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="${kt([0, t, t + 0.03, 0.92, 1])}" dur="${D}s" repeatCount="indefinite"/></rect>`;
   });
-  [["[1]", 418], ["[2]", 452]].forEach(([s, x], i) => {
+  [["c2", 418], ["c7", 452]].forEach(([s, x], i) => {
     const t = 0.68 + i * 0.05;
     v += `<g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="${kt([0, t, t + 0.03, 0.92, 1])}" dur="${D}s" repeatCount="indefinite"/>
 <rect x="${x}" y="94" width="28" height="18" rx="5" fill="${C.teal}" fill-opacity="0.15" stroke="${C.teal}"/>
@@ -237,7 +234,7 @@ function cardLeBy() {
   v += `<text x="487" y="146" class="mono" font-size="11" fill="${C.mute}" text-anchor="middle">grounded answer</text>`;
   return card({
     kicker: "RAG · LEGAL ASSISTANT", title: "LeBy",
-    lines: ["Plain-English answers over Indian law. A router sends", "document questions to RAG and general ones to the LLM."],
+    lines: ["Legal help in plain English. A router sends uploaded", "documents through RAG and general questions to the LLM."],
     chips: ["FAISS", "Gemini", "LangChain", "FastAPI", "React"],
     visual: v,
   });

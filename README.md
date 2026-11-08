@@ -15,12 +15,30 @@
 
 ## About me
 
-I'm a final-year B.Tech IT student at VIT, based in Bangalore. I work on LLM applications end to end: the retrieval layer, the agent graph, the API around them, and the evaluation that tells me whether any of it works.
+I build LLM applications end to end: the retrieval layer, the agent graph, the API around them, and the evaluation that tells me whether any of it works. Most of my work sits where a model meets real data, so I spend my time on the parts that keep it correct.
 
-- 🔭 **Focus:** RAG, agentic workflows with LangGraph and MCP, LLM evaluation
-- 🌱 **Learning now:** production backend and system design
-- 🤝 **Looking for:** full-time AI/ML engineering roles, remote or on-site
-- 📫 **Reach me:** [mayukhbanerjee011@gmail.com](mailto:mayukhbanerjee011@gmail.com)
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>Retrieval-augmented generation</h3>
+      Chunking, embeddings and vector search with Qdrant and FAISS, routed so that answers stay grounded in what was actually retrieved.
+    </td>
+    <td width="50%" valign="top">
+      <h3>Agentic workflows</h3>
+      LangGraph state machines and MCP tool calling, with Pydantic schemas on every tool call and deterministic code between model steps.
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>LLM evaluation</h3>
+      Cost, latency and output quality measured on my own test cases before I write any integration code.
+    </td>
+    <td width="50%" valign="top">
+      <h3>Backend and cloud</h3>
+      FastAPI services, PostgreSQL, MongoDB and Redis, AWS serverless and Docker, designed for retries, races and duplicate deliveries.
+    </td>
+  </tr>
+</table>
 
 ## Tech stack
 
@@ -89,6 +107,7 @@ I'm a final-year B.Tech IT student at VIT, based in Bangalore. I work on LLM app
 | A webhook is delivered twice | `UNIQUE (event_id)` plus `INSERT … ON CONFLICT DO NOTHING`. Zero rows affected means ack and skip. | [Webhook ingest](https://github.com/MayukhBanerjee/Covin-Task) |
 | Check-then-insert race (TOCTOU) | One atomic statement instead of `SELECT` then `INSERT`, with a concurrent-duplicate test under `go test -race`. | [Webhook ingest](https://github.com/MayukhBanerjee/Covin-Task) |
 | Background work dies with the request | A detached context for the worker, and a `sync.WaitGroup` drained on graceful shutdown. | [Webhook ingest](https://github.com/MayukhBanerjee/Covin-Task) |
+| Dedup state splits across two stores | The Postgres unique constraint is the single source of truth. Redis `SET NX` was rejected: if it succeeds and the insert fails, the retry is wrongly dropped as a duplicate. | [Webhook ingest](https://github.com/MayukhBanerjee/Covin-Task) |
 | An agent proposes an unsafe setpoint | Pydantic-validated tool arguments, then a clamp layer of invariants. If a check fails, hold the last safe action. | [EcoLoop](https://github.com/MayukhBanerjee/EcoLoop) |
 | A persona states opinions the person never held | Schema-conditioned RAG and a humility gate that declines instead of inventing. | [Evoke](https://github.com/MayukhBanerjee/Evoke) |
 | Document context leaks into general chat | A mode router: document questions hit FAISS, general ones never touch the vector store. | [LeBy](https://github.com/MayukhBanerjee/LeBy) |
@@ -100,9 +119,9 @@ I'm a final-year B.Tech IT student at VIT, based in Bangalore. I work on LLM app
 
 | Project | What it is | Stack |
 |---|---|---|
-| [Webhook ingest](https://github.com/MayukhBanerjee/Covin-Task) | Found and fixed duplicate counting, a TOCTOU race, a data race and lost background work in a Go service, then made ingestion idempotent. | Go, PostgreSQL, Redis, Docker |
+| [Webhook ingest](https://github.com/MayukhBanerjee/Covin-Task) | Found and fixed duplicate counting, a TOCTOU race, a data race and lost background work in a Go service, then made ingestion idempotent. | Go, PostgreSQL, Docker |
 | [Coldmailer](https://github.com/MayukhBanerjee/Coldmailer) | A LangGraph email pipeline with a critic node that scores weak drafts and rewrites them. | LangGraph, Groq, Streamlit |
-| [VIT campus assistant](https://github.com/MayukhBanerjee/VIT-Student-Helper-RAG-KB) | A RAG assistant over a custom PDF knowledge base, served through a REST API. | Qdrant, Gemini, LangChain, FastAPI |
+| [Campus RAG assistant](https://github.com/MayukhBanerjee/VIT-Student-Helper-RAG-KB) | A RAG assistant over a custom PDF knowledge base, served through a REST API. | Qdrant, Gemini, LangChain, FastAPI |
 | [Fake news detector](https://github.com/MayukhBanerjee/Fake-News-Prediction) | Two-stage check: a fast TF-IDF classifier, then an LLM that explains its verdict. | scikit-learn, Gemini, FastAPI |
 | [Smog in the Prompt](https://github.com/MayukhBanerjee/Smog-in-the-Prompt) | Do LLMs reflect real Delhi pollution data, or what people say about it online? | NLP, Pandas, LLM evaluation |
 | [Portfolio](https://github.com/MayukhBanerjee/MyPortfolio) | My site, with a trigram language model written from scratch and trained on its own text. | Next.js, GSAP, three.js |
@@ -118,7 +137,7 @@ I'm a final-year B.Tech IT student at VIT, based in Bangalore. I work on LLM app
 
 ## Let's connect
 
-I'm looking for a full-time AI/ML engineering role. If you're hiring, or just want to talk about RAG and agents, my inbox is open: **[mayukhbanerjee011@gmail.com](mailto:mayukhbanerjee011@gmail.com)**
+If you're building with LLMs, retrieval or agents, I'd like to hear about it: **[mayukhbanerjee011@gmail.com](mailto:mayukhbanerjee011@gmail.com)**
 
 <p align="center">
   <img src="https://komarev.com/ghpvc/?username=MayukhBanerjee&label=Profile%20views&color=00d4b4&style=flat-square&labelColor=0d1117" alt="Profile views" />

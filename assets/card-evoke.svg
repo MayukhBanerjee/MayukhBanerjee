@@ -22,10 +22,10 @@
 <text x="32" y="194" class="mono" font-size="12" font-weight="600" fill="#00d4b4" letter-spacing="1.5">RESEARCH · PUBLISHED PAPER</text>
 <text x="31" y="228" class="sans" font-size="28" font-weight="700" fill="#f0f6fc">Evoke</text>
 <text class="sans" font-size="15.5" fill="#9da7b3"><tspan x="32" y="258">Models how one person speaks, with a gate that stops it</tspan><tspan x="32" y="280">from inventing opinions they never held.</tspan></text><rect x="32" y="306" width="103.4" height="24" rx="12" fill="#161b22" stroke="#30363d"/>
-<text x="83.7" y="322" class="mono" font-size="12" fill="#c9d1d9" text-anchor="middle">AWS Bedrock</text><rect x="143.4" y="306" width="88.60000000000001" height="24" rx="12" fill="#161b22" stroke="#30363d"/>
-<text x="187.70000000000002" y="322" class="mono" font-size="12" fill="#c9d1d9" text-anchor="middle">LangChain</text><rect x="240" y="306" width="96" height="24" rx="12" fill="#161b22" stroke="#30363d"/>
-<text x="288" y="322" class="mono" font-size="12" fill="#c9d1d9" text-anchor="middle">Serverless</text><rect x="344" y="306" width="96" height="24" rx="12" fill="#161b22" stroke="#30363d"/>
-<text x="392" y="322" class="mono" font-size="12" fill="#c9d1d9" text-anchor="middle">ElevenLabs</text>
+<text x="83.7" y="322" class="mono" font-size="12" fill="#c9d1d9" text-anchor="middle">AWS Bedrock</text><rect x="143.4" y="306" width="66.4" height="24" rx="12" fill="#161b22" stroke="#30363d"/>
+<text x="176.60000000000002" y="322" class="mono" font-size="12" fill="#c9d1d9" text-anchor="middle">Lambda</text><rect x="217.8" y="306" width="96" height="24" rx="12" fill="#161b22" stroke="#30363d"/>
+<text x="265.8" y="322" class="mono" font-size="12" fill="#c9d1d9" text-anchor="middle">Comprehend</text><rect x="321.8" y="306" width="96" height="24" rx="12" fill="#161b22" stroke="#30363d"/>
+<text x="369.8" y="322" class="mono" font-size="12" fill="#c9d1d9" text-anchor="middle">ElevenLabs</text>
 </g>
 <rect x="0.5" y="0.5" width="599" height="349" rx="18" fill="none" stroke="#30363d"/>
 </svg>
